@@ -12,9 +12,9 @@ class ResultViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet weak var employeeCountLabel: UILabel!
+    
     @IBOutlet weak var amountPerEmployeeLabel: UILabel!
 
-    // Variables para el cálculo
     
     var totalTip: Double = 0.0 // Esta se recibirá desde la primera pantalla
     var employeeCount: Int = 1 // Inicialmente hay 1 empleado
@@ -24,21 +24,23 @@ class ResultViewController: UIViewController {
         updateUI() // Actualizar la interfaz cuando se carga la pantalla
     }
 
-    // Función para actualizar la interfaz con los valores actuales
+    // MARK: Actualizar la interfaz con los valores actuales
     func updateUI() {
         employeeCountLabel.text = "\(employeeCount)"
         let amountPerEmployee = totalTip / Double(employeeCount)
         amountPerEmployeeLabel.text = String(format: "$%.2f", amountPerEmployee)
     }
 
-    // IBAction para aumentar el número de empleados
-    @IBAction func increaseEmployees(_ sender: UIButton) {
+    // MARK: Actions para aumentar el número de empleados
+    
+    @IBAction func increaseEmployees(_ sender: Any) {
         employeeCount += 1
         updateUI()
     }
-
-    // IBAction para reducir el número de empleados
-    @IBAction func decreaseEmployees(_ sender: UIButton) {
+    
+    // MARK: Actions para reducir el número de empleados
+    
+    @IBAction func decreaseEmployees(_ sender: Any) {
         if employeeCount > 1 {
             employeeCount -= 1
             updateUI()
