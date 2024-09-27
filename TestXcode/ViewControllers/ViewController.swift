@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tipCell", for: indexPath)
-        cell.textLabel?.text = String(format: "$%.2f", tips[indexPath.row])
+        cell.textLabel?.text = String(format: "€%.2f", tips[indexPath.row])
         return cell
     }
     
